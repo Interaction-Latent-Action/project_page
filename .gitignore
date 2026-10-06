@@ -1,0 +1,44 @@
+# Public project page only. Raw data, archives, paper drafts, local planning,
+# media-processing scripts, debug output and unused assets stay on this machine.
+/*
+!/.gitignore
+!/page/
+
+/page/*
+!/page/index.html
+!/page/assets/
+
+/page/assets/*
+!/page/assets/css/
+!/page/assets/js/
+!/page/assets/data/
+!/page/assets/images/
+!/page/assets/videos/
+
+/page/assets/css/*
+!/page/assets/css/style.css
+/page/assets/js/*
+!/page/assets/js/main.js
+/page/assets/data/*
+!/page/assets/data/results.json
+
+# Images referenced by the current page.
+/page/assets/images/*
+!/page/assets/images/ila-logo.png
+!/page/assets/images/teaser.png
+!/page/assets/images/pipeline.png
+!/page/assets/images/overview.jpg
+!/page/assets/images/preview-cucumber.jpg
+!/page/assets/images/preview-egg.jpg
+!/page/assets/images/preview-celery.jpg
+!/page/assets/images/preview-plate.jpg
+
+# Full demonstration and the four interaction highlights only.
+/page/assets/videos/*
+!/page/assets/videos/overview.mp4
+!/page/assets/videos/preview-cucumber.mp4
+!/page/assets/videos/preview-egg.mp4
+!/page/assets/videos/preview-celery.mp4
+!/page/assets/videos/preview-plate.mp4
+
+# Add explicit exceptions above when publishing additional assets.

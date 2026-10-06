@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="ILA represents motion, contact, and force evolution as interaction latents for contact-rich robot manipulation. Explore real-world tasks, policy learning, and offline improvement.">
+  <meta property="og:title" content="ILA — Interaction Latents as Actions">
+  <meta property="og:description" content="A shared interaction space for learning, executing, and improving contact-rich robot manipulation.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/teaser.png">
+  <title>ILA | Interaction Latents as Actions</title>
+  <link rel="icon" type="image/png" href="assets/images/ila-logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="ILA — back to top"><img src="assets/images/ila-logo.png" alt="ILA" width="54" height="36"></a>
+      <nav aria-label="Main navigation">
+        <a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Results</a><a href="#demos">Demos</a>
+      </nav>
+      <a class="header-video" href="#video">Watch video <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero container" id="top" aria-labelledby="paper-title">
+      <h1 id="paper-title">Interaction Latents as Actions<span>for Contact-Rich Manipulation</span></h1>
+      <div class="authors" aria-label="Authors">
+        <span>Yuhang Zheng<sup>1*</sup></span>
+        <span>Yujie Zang<sup>1,2*</sup></span>
+        <span>Yuchen Liu<sup>2,3*</sup></span>
+        <span>Yupeng Zheng<sup>2,4</sup></span>
+        <span>Zhennan Jiang<sup>5</sup></span>
+        <span>Zebin Xing<sup>5</sup></span>
+        <span>Shuai Tian<sup>5</sup></span>
+        <span>Songen Gu<sup>6</sup></span>
+        <span>Jingxiang Guo<sup>1</sup></span>
+        <span>Chen Gao<sup>1</sup></span>
+        <span>Zhongpu Xia<sup>2†</sup></span>
+        <span>Shuicheng Yan<sup>1+</sup></span>
+      </div>
+      <div class="affiliations" aria-label="Affiliations">
+        <span><sup>1</sup> National University of Singapore</span>
+        <span><sup>2</sup> Anyverse Robotics</span>
+        <span><sup>3</sup> Open-phoenix</span>
+        <span><sup>4</sup> Beijing Institute of Technology</span>
+        <span><sup>5</sup> University of the Chinese Academy of Sciences</span>
+        <span><sup>6</sup> Fudan University</span>
+      </div>
+      <p class="author-notes"><span>* Equal contribution</span><span>† Project leader</span><span>+ Corresponding author</span></p>
+      <div class="resource-buttons">
+        <button class="button button-unavailable" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H6V3h1Zm7 0v5h4M9 12h6M9 16h6"/></svg>Paper <span>Coming soon</span></button>
+        <button class="button button-unavailable" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/></svg>Code <span>Coming soon</span></button>
+        <a class="button button-dark" href="#video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 11 7-11 7Z"/></svg>Watch video</a>
+      </div>
+    </section>
+
+    <section class="section container interaction-showcase" aria-label="Interaction highlights">
+      <div class="interaction-grid">
+        <figure><video data-interaction-preview data-src="assets/videos/preview-cucumber.mp4?v=rl-black" poster="assets/images/preview-cucumber.jpg?v=rl-black" muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" aria-label="Cucumber peeling, 2x playback"></video><span class="interaction-speed" aria-label="2x playback">2×</span></figure>
+        <figure><video data-interaction-preview data-src="assets/videos/preview-egg.mp4" poster="assets/images/preview-egg.jpg" muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" aria-label="Egg flipping, 2x playback"></video><span class="interaction-speed" aria-label="2x playback">2×</span></figure>
+        <figure><video data-interaction-preview data-src="assets/videos/preview-celery.mp4" poster="assets/images/preview-celery.jpg" muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" aria-label="Celery cutting, 2x playback"></video><span class="interaction-speed" aria-label="2x playback">2×</span></figure>
+        <figure><video data-interaction-preview data-src="assets/videos/preview-plate.mp4" poster="assets/images/preview-plate.jpg" muted loop playsinline disablepictureinpicture disableremoteplayback preload="none" aria-label="Plate wiping, 2x playback"></video><span class="interaction-speed" aria-label="2x playback">2×</span></figure>
+      </div>
+    </section>
+
+    <section class="section container overview" id="overview" aria-labelledby="overview-title">
+      <div class="section-heading"><h2 id="overview-title">Overview</h2></div>
+      <figure class="paper-figure teaser-figure">
+        <img src="assets/images/teaser.png" alt="ILA overview: visual, tactile, and motion information are encoded into a shared interaction latent space used by FM, VLA, and WAM policies and an expert-consistency reward model." loading="lazy" width="2100" height="1076">
+      </figure>
+      <p class="overview-intro">We propose <strong>ILA (Interaction Latents as Actions)</strong>, which uses decodable interaction latents that jointly capture the evolution of motion and force application as policy action units, providing a shared representation for action generation, evaluation, and offline improvement.</p>
+    </section>
+
+    <section class="section section-tinted" id="method">
+      <div class="container">
+        <div class="section-heading"><h2>Method</h2></div>
+        <figure class="paper-figure method-figure"><img src="assets/images/pipeline.png" alt="ILA method: visually conditioned joint action and tactile encoding, latent-space policy learning with a shared decoder, and offline improvement using expert-consistency rewards and compatible expert references." loading="lazy" width="2100" height="1320"></figure>
+        <ul class="method-points">
+          <li><h3>Interaction representation</h3><p>A visually conditioned encoder maps aligned action and tactile sequences into shared interaction latents. A time-conditioned decoder reconstructs actions, tactile deformation fields, and aggregate deformation as a force proxy.</p></li>
+          <li><h3>Latent-space policy learning</h3><p>Interaction latents serve as flow-matching targets for post-training FM, VLA, and WAM policies. The frozen shared decoder converts predicted latents into executable actions.</p></li>
+          <li><h3>Offline policy improvement</h3><p>Dense interaction rewards guide offline policy improvement through reward-weighted learning from successful rollouts and expert-guided correction of failed rollouts.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section container" id="results">
+      <div class="section-heading"><h2>Results</h2></div>
+      <div class="chart-topline"><h3>Interaction latent actions</h3><div class="chart-legend"><span><i class="swatch baseline"></i>Baselines</span><span><i class="swatch ila"></i>ILA</span></div></div>
+      <h4 class="metric-heading"><span class="metric-name">Success rate (%)</span> <span class="metric-direction">Higher is better ↑</span></h4>
+      <div class="results-chart" id="results-chart" aria-label="Success rate comparison chart"></div>
+      <h4 class="metric-heading"><span class="metric-name">Execution force-proxy error (F<sub>ext</sub> L1)</span> <span class="metric-direction">Lower is better ↓</span></h4>
+      <div class="results-chart" id="force-results-chart" aria-label="Execution force-proxy error comparison chart"></div>
+      <p class="comparison-methods"><strong>Compared methods.</strong> FM-tac, VLA-tac, and FastWAM-tac directly predict actions with tactile conditioning; FM-tac*, VLA-tac*, and DreamTac jointly predict actions and tactile signals. Methods within each family share expert data and evaluation conditions. <strong>Force error (F<sub>ext</sub> L1)</strong> measures the L1 difference between executed force-proxy signals and expert references.</p>
+    </section>
+
+    <section class="section container" id="policy-improvement" aria-labelledby="policy-improvement-title">
+      <div class="chart-topline improvement-topline"><h3 id="policy-improvement-title">Policy improvement</h3><div class="chart-legend"><span><i class="swatch baseline"></i>FM-ILA</span><span><i class="swatch ila"></i>FM-ILA-RL</span></div></div>
+      <div class="results-chart improvement-results" id="improvement-results-chart" aria-label="FM-ILA before and after offline policy improvement"></div>
+      <p class="comparison-methods">With dense interaction rewards and expert-guided correction, <strong>FM-ILA-RL</strong> improves mean success rate from <strong>80% to 85.25% (+5.25 pp)</strong> and reduces mean execution force-proxy error from <strong>3.39 to 1.82 (46.4% lower)</strong> compared with FM-ILA.</p>
+    </section>
+
+    <section class="section container" id="demos">
+      <div class="section-heading"><h2>Demonstrations</h2></div>
+      <div class="walkthrough-player" id="video"><video id="overview-video" data-src="assets/videos/overview.mp4" poster="assets/images/overview.jpg" controls playsinline preload="none" aria-label="ILA complete research video"></video></div>
+    </section>
+  </main>
+
+  <footer class="site-footer container"><img src="assets/images/ila-logo.png" alt="ILA" width="64" height="43"><a href="#top">Back to top ↑</a></footer>
+  <dialog id="figure-dialog" aria-labelledby="figure-caption"><div class="dialog-tools"><button id="figure-zoom" class="text-button" aria-pressed="false">Zoom in +</button><button class="dialog-close" aria-label="Close enlarged figure">×</button></div><figure><div class="figure-viewport" tabindex="0" role="region" aria-label="Figure viewer; scroll to pan when zoomed"><img id="dialog-image" alt=""></div><figcaption id="figure-caption"></figcaption></figure></dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <noscript><p class="noscript-notice">Enable JavaScript to view interactive results. The full research video is available below.</p><video controls src="assets/videos/overview.mp4" style="max-width:100%"></video></noscript>
+</body>
+</html>
+
