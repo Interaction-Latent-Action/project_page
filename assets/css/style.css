@@ -99,8 +99,8 @@
   letter-spacing: -.5px;
 }
 .authors {
-  display: grid;
-  grid-template-columns: repeat(6, max-content);
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 10px 14px;
   margin-inline: auto;
@@ -192,14 +192,11 @@ dialog{max-width:min(1500px,94vw);max-height:92vh;width:94vw;padding:50px 28px 2
 @media(max-width:760px){:root{--header-height:60px}.container,.header-inner{width:calc(100% - 36px)}.header-inner{grid-template-columns:auto minmax(0,1fr);gap:12px}.brand img{width:44px}.header-video{display:none}.site-header nav{justify-self:end;font-size:14px;gap:2px}.site-header nav a{padding:10px 8px}.site-header nav a::after{inset-inline:8px}.button{font-size:11px;padding:9px 12px;gap:6px}.button-unavailable span{font-size:8px}.section{padding-block:24px}.section-heading h2,.improvement h2{font-size:24px;letter-spacing:-.3px}.walkthrough .section-heading h2::after{margin-inline:0}.section-copy{font-size:14px;margin-top:20px}.paper-figure{margin-top:27px}.paper-figure figcaption{font-size:10px}.figure-enlarge{font-size:8px;right:8px;bottom:7px;padding:3px 7px}.results-details summary{font-size:12px}.method-points{grid-template-columns:1fr;gap:16px}.task-tabs{margin-top:25px;grid-template-columns:repeat(2,1fr);border-bottom:0;gap:5px}.task-tabs button{justify-content:flex-start;border:1px solid #e4e4e4;border-radius:4px;padding:12px;gap:8px;font-size:9px}.task-tabs button>span{font-size:11px}.task-tabs button[aria-selected=true]{background:#f7f7f5}.task-intro{font-size:12px;margin:20px 0 18px}.demo-toolbar{align-items:flex-start;gap:12px;flex-wrap:wrap}.segmented-control>button{font-size:10px;padding:7px 10px}.select-label{font-size:10px}.select-label select{font-size:10px;padding-top:5px;padding-bottom:5px;min-height:31px}.player-caption{padding:11px 0;gap:12px}.player-caption span,.player-caption a{font-size:10px}.player-caption a{white-space:normal;text-align:right}.comparison-grid{grid-template-columns:1fr;gap:24px}.comparison-controls{gap:8px}.comparison-controls>p{flex-basis:100%;margin:2px 0 0;font-size:10px}.improvement-heading{grid-template-columns:1fr;gap:22px}.improvement-heading>p{font-size:13px;max-width:100%}.improvement-stats{gap:25px;margin-top:28px;margin-bottom:28px;padding-top:21px}.improvement-stats>div>span{font-size:10px;line-height:1.6;display:block;min-height:32px}.improvement-stats strong{font-size:30px;letter-spacing:-1px;margin-top:4px}.improvement-stats strong>span{font-size:17px}.improvement-stats strong>i{font-size:21px;padding:0 4px}.improvement-stats p{font-size:9px}.chart-topline{flex-direction:column;align-items:flex-start;gap:13px;margin-top:26px;font-size:11px}.chart-legend{font-size:9px;gap:20px}.results-chart{grid-template-columns:1fr;gap:20px;margin-top:20px}.chart-group{padding:12px 8px}.chart-group-title{flex-direction:column;gap:6px;margin-bottom:27px}.chart-group-title h3{font-size:12px}.chart-group-title span{font-size:9px}.bars{gap:6px;height:164px}.bar{width:40px}.bar>span{font-size:10px;top:-21px}.bar-labels{gap:6px;font-size:11px}.chart-group>p{font-size:8px;line-height:1.6;min-height:25px}.chart-note{font-size:10px}.ablation-callout{grid-template-columns:1fr;gap:13px;margin-top:33px;padding-left:19px}.ablation-callout h3{font-size:18px}.ablation-callout p{font-size:12px}.walkthrough .section-heading{text-align:left}.walkthrough-player{margin-top:27px}.walkthrough-caption{font-size:10px}.site-footer{padding-block:28px}.site-footer img{width:40px}.site-footer>a{font-size:10px}dialog{padding:50px 10px 15px;width:96vw;max-width:96vw}dialog figcaption{font-size:10px}}
 
 @media(max-width:380px){.site-header nav{font-size:13px;gap:0}.site-header nav a{padding-inline:6px}.site-header nav a::after{inset-inline:6px}}
-@media(max-width:915px) {
-  .authors { grid-template-columns: repeat(4, max-content); }
-}
 @media(max-width:760px) {
   .hero { padding-top: 40px; }
   .hero h1 { font-size: 40px; letter-spacing: -1.2px; margin-bottom: 28px; }
   .hero h1 > span { font-size: .65em; letter-spacing: -.5px; margin-top: 10px; }
-  .authors { display: flex; flex-wrap: wrap; font-size: 14px; gap: 8px 18px; }
+  .authors { gap: 8px 18px; }
   .affiliations { font-size: 14px; gap: 6px 16px; margin-top: 20px; }
   .affiliations > span { white-space: normal; }
   .author-notes { font-size: 12px; gap: 6px 16px; margin-top: 16px; }
